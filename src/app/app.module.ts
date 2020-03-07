@@ -6,34 +6,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeModule } from './employee/employee.module';
-import { ProductModule } from './product/product.module';
-import { SigninComponent } from './components/signin/signin.component';
-import { MainMenuComponent } from './components/main-menu/main-menu.component';
-import { PageHeaderComponent } from './components/page-header/page-header.component';
-import { HttpRequestInterceptor } from './HttpInterceptor';
+import { SiteComponent } from './site/site.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-	  SigninComponent,
-    MainMenuComponent,
-    SigninComponent,
-    PageHeaderComponent
+    SiteComponent
   ],
   imports: [
     BrowserModule,
 	  ReactiveFormsModule,
     HttpClientModule,
-    EmployeeModule,
 	  AppRoutingModule,
 	  BrowserModule,
     BrowserAnimationsModule,
-    ProductModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

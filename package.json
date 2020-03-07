@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "db": "mongod --dbpath ./database/",
-    "backend": "nodemon ./backend/server.js",
+    "backend": "nodemon server.js",
     "frontend": "cd frontend; ng serve --proxy-config ./proxy.conf.json",
     "ng": "ng",
     "start": "node server.js",
