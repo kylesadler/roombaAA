@@ -43,4 +43,11 @@ export class SiteComponent implements OnInit {
     });
   }
 
+
+  keyDownFunction(event, s : String) {
+    if(event.keyCode == 13) {
+      this.submit(s);
+    }
+  }
+
 }

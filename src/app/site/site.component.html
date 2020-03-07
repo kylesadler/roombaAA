@@ -7,7 +7,7 @@
  <br>
 
 <mat-card [style.backgroundColor]="'rgba(173, 173, 173, 0.21)'">
-	<form id="submit-form">
+	<form id="submit-form" (keydown)="keyDownFunction($event, string.value)">
 		<div class="grid">
 				<input #string type="text" class="form-control" id="string" name="string" placeholder="what should I say?">
 				<button mat-raised-button color="accent" type="button" class="btn btn-primary" (click)='submit(string.value);'>
