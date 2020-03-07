@@ -17,9 +17,11 @@
 	</form>
 		<hr>
 		
-		<mat-card class="textCards" id="first">
-			{{strings[0].text}}
-		</mat-card>
+		<div *ngIf="strings[0]">
+			<mat-card class="textCards" id="first">
+				{{strings[0].text}}
+			</mat-card>
+		</NgIf>
 
 		<mat-card class="textCards" *ngFor="let string of strings | slice:1">
 			{{string.text}}
