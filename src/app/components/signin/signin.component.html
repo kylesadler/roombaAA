@@ -1,0 +1,6 @@
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit(signInForm.value)">
+	<label> Employee ID: <input type="number" formControlName="employeeId"> </label><br>
+	<label> Password: <input type="password" formControlName="password"> </label><br>
+	<button type="submit">Sign In</button>
+</form>
+<div *ngIf="errorMsg != null">{{ errorMsg }}</div>
