@@ -13,7 +13,7 @@ router.get("/getTexts", (req, res) => {
 router.get("/getText", (req, res) => {
     console.log("GET /api/getText");
 
-    Text.findOneAndDelete({}, {}, { sort: { 'created_at' : -1 } }, util.handleQuery(res));
+    Text.findOneAndDelete({}, { sort: { 'created_at' : -1 } }, util.handleQuery(res));
 
 });
 
