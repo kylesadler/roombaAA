@@ -2,6 +2,9 @@
   "name": "name",
   "version": "0.0.0",
   "scripts": {
+    "db": "mongod --dbpath ./database/",
+    "backend": "nodemon server.js",
+    "frontend": "ng serve --proxy-config ./proxy.conf.json",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -19,6 +22,7 @@
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
+    "mongoose": "^5.9.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
