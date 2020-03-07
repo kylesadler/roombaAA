@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-site',
   templateUrl: './site.component.html',
-  styleUrls: ['./site.component.css']
+  styleUrls: ['./site.component.sass']
 })
 export class SiteComponent implements OnInit {
 
@@ -38,4 +38,3 @@ export class SiteComponent implements OnInit {
   }
 
 }
-
