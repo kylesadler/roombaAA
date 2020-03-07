@@ -12,8 +12,15 @@ router.get("/getTexts", (req, res) => {
 // send one text to robot
 router.get("/getText", (req, res) => {
     console.log("GET /api/getText");
-    Text.find({}, util.handleQuery(res)).sort({ $natural: -1 }).limit(1)
-
+    Text.find({}, (err, data) => {
+        if(err) {
+            util.handleError(res, err.message);
+        }
+        else {
+            Text.deleteOne(data);
+            res.status(200).send(data);
+        }
+    }).sort({ $natural: -1 }).limit(1)
 });
 
 // frontend submit a post
