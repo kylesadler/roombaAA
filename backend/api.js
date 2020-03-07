@@ -44,7 +44,7 @@ router.get("/clear", (req, res) => {
 // reset texts
 router.get("/reset", (req, res) => {
     console.log("GET /api/reset");
-    Text.remove({})
+    Text.deleteMany({})
     
     let newText = new Text({
         text: "existence is pain",
