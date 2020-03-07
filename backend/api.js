@@ -33,4 +33,10 @@ router.post("/delete", (req, res) => {
     Text.findByIdAndDelete(req.body.id, util.handleQuery(res))
 });
 
+// clear all
+router.get("/clear", (req, res) => {
+    console.log("GET /api/clear");
+    Text.remove({}, util.handleQuery(res))
+});
+
 module.exports = router;

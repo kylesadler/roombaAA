@@ -14,25 +14,37 @@ export class SiteComponent implements OnInit {
 	) {}
 
   strings; 
+  input;
 
   ngOnInit() {
     this.getStrings();
   }
 
   getStrings(){
-    return this.http.get('/api/getTexts').subscribe(response => {
+    let req =  this.http.get('/api/getTexts').subscribe(response => {
       console.log(response);
       this.strings = response;
+      
+      let h = document.getElementsByClassName('textCards')[0].innerHTML;
+      console.log(h);
     }, (err) => {
       console.log("Error: " + err);
     });
+
+    
   }
 
+  
 
   submit(s: String){
+    
+    
     console.log('string submitted: ' + s);
     let formData = {};
     formData['text'] = s;
+    
+    (<HTMLInputElement>document.getElementById("string")).value = "";
+
     return this.http.post('/api/submit', formData).subscribe((response) => {
       console.log(response);
       this.getStrings();
