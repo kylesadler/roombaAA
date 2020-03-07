@@ -6,11 +6,13 @@
     "backend": "nodemon server.js",
     "frontend": "ng serve --proxy-config ./proxy.conf.json",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --output-path dist --configuration=production"
+  
   },
   "private": true,
   "dependencies": {
