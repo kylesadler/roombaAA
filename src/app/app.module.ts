@@ -1,10 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SiteComponent } from './site/site.component';
 
@@ -14,12 +10,7 @@ import { SiteComponent } from './site/site.component';
     SiteComponent
   ],
   imports: [
-    BrowserModule,
-	  ReactiveFormsModule,
-    HttpClientModule,
-	  AppRoutingModule,
-	  BrowserModule,
-    BrowserAnimationsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

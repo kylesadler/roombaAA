@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-site',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+	) {}
 
-  ngOnInit(): void {
+  strings; 
+
+  ngOnInit() {
+    this.getStrings();
+  }
+
+  getStrings(){
+    return this.http.get('api/getStrings').subscribe(response => {
+      console.log(response);
+      this.strings = response;
+    });
+  }
+
+
+  submit(s: String){
+    console.log('string submitted');
+    let formData = {};
+    formData['string'] = s;
+    return this.http.post('api/submit', formData).subscribe(response => {
+      console.log("submitted string");
+      this.getStrings();
+    });
   }
 
 }
+
