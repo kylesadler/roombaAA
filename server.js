@@ -13,16 +13,8 @@ app.use(express.static(distDir));
 //// Set up bodyParser
 app.use(bodyParser.json());
 
-
-app.get("/api", (request, response) => {
-  console.log("GET api/");
-  productApi.getAllProducts(request, response);
-});
-
-app.post("/api", (request, response) => {
-  console.log("POST api/");
-  productApi.getAllProducts(request, response);
-});
+const api = require('./backend/api.js');
+server.use('/api', api);
 
 //Affirm connection to server
 app.listen(process.env.PORT || 8080, ()=>{
