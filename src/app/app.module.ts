@@ -11,16 +11,19 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
-    SiteComponent,
+    SiteComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatToolbarModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

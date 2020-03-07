@@ -28,7 +28,7 @@ export class SiteComponent implements OnInit {
 
 
   submit(s: String){
-    console.log('string submitted');
+    console.log('string submitted: ' + s);
     let formData = {};
     formData['string'] = s;
     return this.http.post('api/submit', formData).subscribe(response => {

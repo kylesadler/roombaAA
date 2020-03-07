@@ -1,15 +1,8 @@
-<!-- <form [formGroup]="f" (ngSubmit)="onSubmit(f.value)">
-    <input type="text" required id="input" ngModel>
-    <button class="button" type="submit">Purchase</button>
- </form> -->
-<!-- 
  <mat-card [style.backgroundColor]="'#000000'">
     <mat-toolbar [style.backgroundColor]="'rgba(255, 255, 255, 0)'">
         <span> Roombaaa </span>
     </mat-toolbar>
 </mat-card>
- -->
-<!-- 
 
  <br>
 
@@ -17,22 +10,18 @@
 	<form id="submit-form">
 		<div class="grid">
 				<input #string type="text" class="form-control" id="string" name="string" placeholder="what should I say?">
+				<button mat-raised-button color="accent" type="submit" class="btn btn-primary" (click)='submit(string.value);'>
+					Submit
+				</button>
 		</div>
-		<hr>
-		<div class="form-group"> 
-			<button mat-raised-button color="accent" type="submit" class="btn btn-primary" (click)='submit(string.value);'>
-				Submit
-			</button>
-		</div>
-		
 	</form>
+		<hr>
+		
+		<ul>
+			<li *ngFor="let string of strings">
+				<a class="button>{{string.text}}"></a>
+			</li>
+		</ul>
 </mat-card>
 
-<ul>
-    <li *ngFor="let string of strings">
-        <a class="button>{{string.text}}"></a>
-    </li>
-</ul> -->
 
-
-<p>adfgsfadfsgsdhf</p>
