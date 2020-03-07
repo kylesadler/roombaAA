@@ -12,7 +12,7 @@ router.get("/getTexts", (req, res) => {
 // send one text to robot
 router.get("/getText", (req, res) => {
     console.log("GET /api/getText");
-    Text.find({}, util.handleQuery(res)).sort({ $natural: -1 }).limit(N)
+    Text.find({}, util.handleQuery(res)).sort({ $natural: -1 }).limit(1)
 
 });
 
@@ -37,7 +37,7 @@ router.post("/delete", (req, res) => {
 // clear all
 router.get("/clear", (req, res) => {
     console.log("GET /api/clear");
-    Text.remove({}, util.handleQuery(res))
+    Text.deleteMany({}, util.handleQuery(res))
 });
 
 // reset texts
