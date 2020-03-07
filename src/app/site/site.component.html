@@ -17,11 +17,11 @@
 	</form>
 		<hr>
 		
-		<mat-card class="textCards" *ngFor="let string of strings[0]">
-			{{string.text}}
+		<mat-card class="textCards" id="first">
+			{{strings[0].text}}
 		</mat-card>
 
-		<mat-card class="textCards" *ngFor="let string of strings.slice(1,)">
+		<mat-card class="textCards" *ngFor="let string of strings | slice:1">
 			{{string.text}}
 		</mat-card>
 </mat-card>
