@@ -20,9 +20,11 @@ export class SiteComponent implements OnInit {
   }
 
   getStrings(){
-    return this.http.get('api/getStrings').subscribe(response => {
+    return this.http.get('/api/getTexts').subscribe(response => {
       console.log(response);
       this.strings = response;
+    }, (err) => {
+      console.log("Error: " + err);
     });
   }
 
@@ -30,10 +32,12 @@ export class SiteComponent implements OnInit {
   submit(s: String){
     console.log('string submitted: ' + s);
     let formData = {};
-    formData['string'] = s;
-    return this.http.post('api/submit', formData).subscribe(response => {
-      console.log("submitted string");
+    formData['text'] = s;
+    return this.http.post('/api/submit', formData).subscribe((response) => {
+      console.log(response);
       this.getStrings();
+    }, (err) => {
+      console.log("Error: " + err);
     });
   }
 

@@ -14,7 +14,7 @@ app.use(express.static(distDir));
 app.use(bodyParser.json());
 
 const api = require('./backend/api.js');
-server.use('/api', api);
+app.use('/api', api);
 
 //Affirm connection to server
 app.listen(process.env.PORT || 8080, ()=>{
