@@ -39,4 +39,16 @@ router.get("/clear", (req, res) => {
     Text.remove({}, util.handleQuery(res))
 });
 
+// reset texts
+router.get("/reset", (req, res) => {
+    console.log("GET /api/reset");
+    Text.remove({})
+    
+    let newText = new Text({
+        text: "existence is pain",
+    });
+
+    newText.save(util.handleQuery(res));
+});
+
 module.exports = router;

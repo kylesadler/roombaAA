@@ -24,20 +24,12 @@ export class SiteComponent implements OnInit {
     let req =  this.http.get('/api/getTexts').subscribe(response => {
       console.log(response);
       this.strings = response;
-      
-      let h = document.getElementsByClassName('textCards')[0].innerHTML;
-      console.log(h);
-    }, (err) => {
-      console.log("Error: " + err);
     });
-
-    
   }
 
   
 
   submit(s: String){
-    
     
     console.log('string submitted: ' + s);
     let formData = {};
@@ -48,8 +40,6 @@ export class SiteComponent implements OnInit {
     return this.http.post('/api/submit', formData).subscribe((response) => {
       console.log(response);
       this.getStrings();
-    }, (err) => {
-      console.log("Error: " + err);
     });
   }
 
