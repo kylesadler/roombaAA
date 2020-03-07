@@ -18,7 +18,7 @@ export class SiteComponent implements OnInit {
 
   ngOnInit() {
     this.getStrings();
-    setInterval(()=> { this.getStrings() }, 500);
+    setInterval(()=> { this.getStrings() }, 1000);
   }
 
   getStrings(){
@@ -38,7 +38,7 @@ export class SiteComponent implements OnInit {
     
     (<HTMLInputElement>document.getElementById("string")).value = "";
 
-    return this.http.post('/api/submit', formData).subscribe((response) => {
+    let h = this.http.post('/api/submit', formData).subscribe((response) => {
       console.log(response);
       this.getStrings();
     });
@@ -48,6 +48,7 @@ export class SiteComponent implements OnInit {
   keyDownFunction(event, s : String) {
     if(event.keyCode == 13) {
       this.submit(s);
+      return false;
     }
   }
 
