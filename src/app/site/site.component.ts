@@ -18,6 +18,7 @@ export class SiteComponent implements OnInit {
 
   ngOnInit() {
     this.getStrings();
+    setInterval(()=> { this.getStrings() }, 500);
   }
 
   getStrings(){
