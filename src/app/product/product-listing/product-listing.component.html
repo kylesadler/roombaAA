@@ -1,7 +1,0 @@
-<h1>Product Listing</h1>
-<a class="button" href="/productdetails/" *ngIf="isManager">Create New</a>
-<ul>
-    <li *ngFor="let product of products">
-        <a class="button" href="/productdetails/{{product._id}}">{{product.name}}</a>
-    </li>
-</ul>

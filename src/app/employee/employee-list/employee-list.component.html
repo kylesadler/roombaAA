@@ -1,7 +1,0 @@
-<h1>Employees</h1>
-<a class="button" href="/employeedetails/" *ngIf="isManager">Create New</a>
-<ul>
-    <li *ngFor="let employee of employees">
-        <a href="/employeedetails/{{employee._id}}" class="button">{{employee.firstName}} {{employee.lastName}}</a>
-    </li>
-</ul>
